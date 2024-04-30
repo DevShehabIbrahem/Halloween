@@ -126,6 +126,7 @@ button{
 
 
 /*=============== LAYOUT ===============*/
+
 .container{
   max-width: 968px;
   margin-left: var(--mb-1-5);
@@ -255,11 +256,9 @@ button{
 
 /*=============== HOME ===============*/
 
-
+/**  علشان الكلام التحت الصوره واخد ابسيليوت **/
 .home__group{
-  display: grid;
   position: relative;
-  padding-top: 2rem;
 }
 
 
@@ -452,7 +451,7 @@ font-size: 35px;
 }
 
 .trick__button{
-  display: inline-flex;
+  /* display: inline-flex; */
   padding: .5rem;
   border-radius: .25rem .25rem .75rem .25rem;
   position: absolute;
@@ -465,14 +464,15 @@ font-size: 35px;
   color: var(--title-color);
 }
 
-.trick__content:hover .trick__img{
-  transform: translateY(-.5rem);
-}
+
 
 .trick__content:hover .trick__button{
   right: 0;
 }
-
+.trick__content:hover{
+  transform: translateY(-20px);
+  transition: all .5s ease;
+}
 /*=============== DISCOUNT ===============*/
 .discount__container{
   background: var(--container-color);
@@ -702,10 +702,6 @@ font-size: 35px;
 /*===============  BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px){
-  .container{
-    margin-left: var(--mb-1);
-    margin-right: var(--mb-1);
-  }
 
   .home__img{
     height: 200px;
@@ -721,6 +717,7 @@ font-size: 35px;
     grid-template-columns: .8fr;
     justify-content: center;
   }
+ 
 }
 
 /* For medium devices */
@@ -738,6 +735,13 @@ font-size: 35px;
   .newsletter__description{
     padding: 0 3rem;
   }
+  .new .swiper-wrapper{
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+  .new__content{
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 767px){
@@ -752,11 +756,10 @@ font-size: 35px;
   .nav{
     height: calc(var(--header-height) + 1.5rem);
   }
-  /* .nav__img,
-  .nav__close,
-  .nav__toggle{
+
+  .nav__img{
     display: none;
-  } */
+  }
 
   .nav__list{
     flex-direction: row;
@@ -901,6 +904,7 @@ font-size: 35px;
   }
   .trick__content{
     border-radius: 1.5rem;
+    transition: all 1s ease;
   }
   .trick__img{
     width: 110px;
@@ -932,6 +936,11 @@ font-size: 35px;
   .footer__copy{
     margin-top: 6rem;
   }
+
+  .new .swiper-wrapper{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
 }
 
 @media screen and (min-width: 1200px){
